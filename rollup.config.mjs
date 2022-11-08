@@ -37,6 +37,7 @@ export default [
         path: "./postcss.config.js",
       },
       extensions: [".css"],
+      extract:"tailwind.css",
       minimize: true,
       inject: {
         insertAt: "top",
