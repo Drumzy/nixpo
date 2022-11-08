@@ -3,7 +3,10 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import packageJson from "./package.json" assert {type: "json"};
-
+import esbuild from "rollup-plugin-esbuild";
+import nodeExternals from "rollup-plugin-node-externals";
+import postcss from "rollup-plugin-postcss";
+import path from "path";
 export default [
   {
     input: "src/index.ts",
@@ -20,9 +23,25 @@ export default [
       },
     ],
     plugins: [
+      nodeExternals(),
+      esbuild({
+        minify: true,
+        sourceMap: false,
+        tsconfig: path.resolve(process.cwd(), 'tsconfig.json')
+      }),
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      postcss({
+      config: {
+        path: "./postcss.config.js",
+      },
+      extensions: [".css"],
+      minimize: true,
+      inject: {
+        insertAt: "top",
+      },
+    }),
     ],
   },
   {

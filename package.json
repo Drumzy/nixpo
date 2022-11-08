@@ -1,6 +1,6 @@
 {
   "name": "nixpo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React Component Library",
   "scripts": {
     "rollup": "rollup -c"
@@ -19,12 +19,22 @@
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^9.0.2",
+    "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
-    "react": "^18.2.0",
     "rollup": "^3.2.5",
     "rollup-plugin-dts": "^5.0.0",
+    "rollup-plugin-esbuild": "^4.10.2",
+    "rollup-plugin-node-externals": "^5.0.2",
+    "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.4.1",
     "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.18",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.2.2",
+    "class-variance-authority": "^0.3.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
