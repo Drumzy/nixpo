@@ -1,6 +1,6 @@
 {
   "name": "nixpo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Component Library",
   "scripts": {
     "rollup": "rollup -c"

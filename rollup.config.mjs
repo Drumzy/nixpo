@@ -43,6 +43,7 @@ export default [
       },
     }),
     ],
+    external:["react"],
   },
   {
     input: "dist/esm/index.d.ts",
