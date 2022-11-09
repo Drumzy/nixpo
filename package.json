@@ -1,9 +1,13 @@
 {
   "name": "nixpo",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Component Library",
+  
   "scripts": {
-    "rollup": "rollup -c"
+    "prepare:types":"tsc --outDir dist --declarationDir dist/types --declaration true",
+    "build:tailwind":"tailwindcss -o src/tailwind.css --minify",
+    "build:rollup": "rollup --config rollup.config.mjs",
+    "build:all":"npm run build:tailwind && npm run build:rollup && cp src/tailwind.css dist/cjs && cp src/tailwind.css dist/esm"
   },
   "repository": {
     "type": "git",

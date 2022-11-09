@@ -1,2 +1,2 @@
-import "./tailwind.css";
-export * from "./components"
+export * from "./components";
+export {NixpoProvider} from "./context/ThemeContext"
